@@ -16,13 +16,131 @@ section{padding:82px 0}.section-head{display:flex;align-items:end;justify-conten
 .contact{background:linear-gradient(125deg,#152c4d,#24466e);color:white}.contact .section-head h2{color:white}.contact .section-head p{color:#c6d5e5}.contactbox{border:1px solid #496789;background:#ffffff0b;border-radius:18px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:30px}.contactbox h3{font-size:1.5rem;margin:0 0 5px}.contactbox p{margin:0;color:#cad8e7}.contactbox .btn.ghost{background:#fff;border-color:#fff}.footer{padding:22px 0;background:#10233c;color:#c3d1df;font-size:.8rem}.footerin{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .lightbox{display:none;position:fixed;inset:0;background:#07111ee8;z-index:50;align-items:center;justify-content:center;padding:30px}.lightbox.open{display:flex}.lightbox img{max-height:90vh;max-width:90vw;object-fit:contain}.close{position:absolute;right:25px;top:20px;color:white;background:none;border:0;font-size:2rem;cursor:pointer}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
-@media(max-width:800px){.hero-grid,.about-grid,.leadgrid{grid-template-columns:1fr;gap:35px}.hero{padding:50px 0}.hero-photo{max-width:360px}.hero-photo img{height:460px}.photo-note{left:-10px}.section-head{display:block}.section-head p{margin-top:12px}.exp{grid-template-columns:130px 1fr;gap:17px}.exp img{height:180px}.projectgrid{grid-template-columns:1fr}.gallerygrid{grid-template-columns:1fr 1fr}.galleryitem img{height:220px}.skillgrid{grid-template-columns:1fr 1fr}.contactbox{display:block}.contactbox .buttons{margin-top:20px}}
-@media(max-width:560px){.navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}.navlinks.show{display:flex}.menu{display:block}.hero h1{font-size:3.15rem}.exp{grid-template-columns:1fr}.exp img{height:280px}.gallerygrid{grid-template-columns:1fr 1fr}.galleryitem img{height:185px}.skillgrid{grid-template-columns:1fr}.section-head{margin-bottom:24px}section{padding:62px 0}}
+/* Responsive layout refinements */
+@media(max-width:900px){
+  .wrap{width:min(100% - 36px,720px)}
+  .hero-grid,.about-grid,.leadgrid{grid-template-columns:1fr;gap:32px}
+  .hero{padding:48px 0 54px}
+  .hero-grid>div:first-child{max-width:680px}
+  .hero-photo{width:min(100%,340px);max-width:340px;margin:8px auto 0}
+  .hero-photo img{height:430px}
+  .photo-note{left:8px;bottom:14px}
+  .circle-tag{right:4px;top:10px}
+  .section-head{display:block}
+  .section-head p{margin-top:12px}
+  .exp{grid-template-columns:190px minmax(0,1fr);gap:20px}
+  .exp img{height:200px}
+  .projectgrid{grid-template-columns:1fr 1fr}
+  .project img{height:250px}
+  .leadgrid img{height:350px}
+  .gallerygrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .galleryitem img{height:230px}
+  .skillgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contactbox{display:block}
+  .contactbox .buttons{margin-top:20px}
+}
+@media(max-width:600px){
+  html,body{width:100%;overflow-x:hidden}
+  .wrap{width:calc(100% - 32px);max-width:100%}
+  .navin{height:64px}
+  .navlinks{display:none;position:absolute;top:64px;left:0;right:0;background:white;padding:16px 20px;flex-direction:column;gap:14px;border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(25,54,87,.08)}
+  .navlinks.show{display:flex}
+  .menu{display:block;padding:6px 8px}
+  .hero{padding:38px 0 44px}
+  .hero h1{font-size:clamp(2.35rem,11vw,3.1rem);line-height:1.04;overflow-wrap:anywhere}
+  .lead{font-size:1rem}
+  .chips{gap:7px;margin:18px 0}
+  .chip{font-size:.72rem;padding:6px 10px}
+  .buttons{gap:9px}
+  .btn{padding:11px 14px;font-size:.84rem}
+  .hero-photo{width:min(78%,290px);max-width:290px}
+  .hero-photo img{height:360px;max-height:72vh}
+  .photo-note{left:-12px;bottom:12px;padding:11px 14px;font-size:.76rem;max-width:calc(100% - 10px)}
+  .photo-note b{font-size:.9rem}
+  .circle-tag{right:-8px;top:8px;padding:10px 12px;font-size:.67rem}
+  section{padding:54px 0}
+  .section-head{margin-bottom:24px}
+  .section-head h2{font-size:clamp(1.65rem,8vw,2.15rem)}
+  .section-head p{font-size:.92rem}
+  .about-grid{gap:20px}
+  .statbox{padding:22px;gap:15px}
+  .stat strong{font-size:1.65rem}
+  .about-copy{font-size:.95rem}
+  .about-copy .quote{font-size:1.12rem}
+  .exp{grid-template-columns:1fr;gap:14px;padding:16px}
+  .exp img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+  .exp h3{font-size:1.12rem}
+  .exp p,.exp ul{font-size:.9rem}
+  .projectgrid{grid-template-columns:1fr;gap:16px}
+  .project img{height:auto;max-height:300px;aspect-ratio:4/3;object-fit:contain}
+  .projectbody{padding:17px}
+  .leadgrid{gap:18px}
+  .leadgrid img{height:auto;aspect-ratio:4/3;object-fit:cover}
+  .leadgrid h3{font-size:1.25rem}
+  .skillgrid{grid-template-columns:1fr;gap:10px}
+  .skill{padding:16px}
+  .gallerygrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .galleryitem img{height:auto;aspect-ratio:3/4;object-fit:cover}
+  .galleryitem span{padding:10px;font-size:.78rem}
+  .contactbox{padding:20px}
+  .contactbox h3{font-size:1.25rem}
+  .contactbox .buttons{display:flex;flex-wrap:wrap}
+  .footerin{font-size:.75rem}
+}
+@media(max-width:380px){
+  .wrap{width:calc(100% - 26px)}
+  .brand{font-size:.9rem}
+  .hero h1{font-size:2.25rem}
+  .hero-photo{width:76%;max-width:250px}
+  .hero-photo img{height:320px}
+  .photo-note{left:-16px;padding:9px 12px}
+  .circle-tag{right:-12px;padding:9px 10px}
+  .gallerygrid{gap:8px}
+  .galleryitem span{padding:8px;font-size:.72rem}
+  .btn{padding:10px 12px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+
+
+/* Visual refinement: cleaner, contemporary, less card-heavy */
+:root{--navy:#173253;--blue:#7896b8;--pale:#edf3f9;--ink:#293a4d;--muted:#728197;--line:#e1e8f0;--shadow:0 14px 40px rgba(22,48,79,.07)}
+body{background:#fbfcfe;line-height:1.7}
+.nav{background:rgba(251,252,254,.92)}
+.navin{height:68px}.brand{letter-spacing:.01em}
+.hero{padding:64px 0 70px;background:linear-gradient(120deg,#fff 0%,#f5f8fc 100%)}
+.hero:before{width:360px;height:360px;right:-160px;top:-165px;box-shadow:0 0 0 30px rgba(210,224,239,.15),0 0 0 60px rgba(210,224,239,.08)}
+.hero-grid{gap:48px}.hero h1{font-size:clamp(2.6rem,5.5vw,4.7rem);letter-spacing:-.045em}
+.hero-photo{max-width:360px}.hero-photo img{height:460px;border-radius:180px 180px 16px 16px;box-shadow:0 16px 38px rgba(24,50,80,.12)}
+.photo-note{position:static;margin:14px auto 0;width:fit-content;background:transparent;padding:0;box-shadow:none;border-radius:0;text-align:center;color:#708197;font-size:.8rem}
+.photo-note b{font-size:.92rem;color:var(--navy);font-weight:650}
+.circle-tag{display:none}
+section{padding:70px 0}.section-head{margin-bottom:28px}.section-head h2{font-weight:650;letter-spacing:-.035em}
+.about-grid{gap:40px;align-items:stretch}.statbox{background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:14px;padding:25px;gap:16px;box-shadow:none}.stat strong{font-size:1.8rem;color:var(--navy)}.stat small{color:#7b8a9d}
+.about-copy .quote{font-size:1.25rem;font-weight:550}.about-copy{font-size:1rem}
+.journey{background:#f6f8fb}.exp{grid-template-columns:190px minmax(0,1fr);gap:24px;padding:20px;border:1px solid #e8edf3;border-radius:14px;box-shadow:none}.exp img{height:180px;border-radius:9px}.exp h3{font-weight:650}.exp p,.exp ul{font-size:.92rem}
+.projects{background:#fff}.projectgrid{gap:18px}.project{border:1px solid #e8edf3;border-radius:14px;box-shadow:none}.project:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(25,54,87,.06)}.project img{height:260px;background:#fafbfd;padding:14px}.projectbody{padding:20px}.tag{background:#f1f5f9;color:#607b98}
+.leadership{background:#f6f8fb}.leadgrid{gap:36px}.leadgrid img{height:360px;border-radius:12px}
+.skillgrid{gap:12px}.skill{background:#fff;border-radius:12px;border-color:#e8edf3;padding:18px;box-shadow:none}
+.gallery{background:#f6f8fb}.gallerygrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.galleryitem{background:transparent;border-radius:10px;box-shadow:none}.galleryitem img{height:170px;object-fit:cover;border-radius:10px}.galleryitem span{padding:9px 2px 3px;font-size:.82rem;color:#526981;font-weight:550}
+.contactbox{border-radius:14px;background:rgba(255,255,255,.06);padding:26px}.contact .btn{border-radius:8px}
+@media(max-width:900px){.hero{padding:48px 0}.hero-grid{gap:32px}.hero-photo{max-width:330px}.hero-photo img{height:420px}.exp{grid-template-columns:170px minmax(0,1fr);gap:18px}.exp img{height:170px}.gallerygrid{grid-template-columns:repeat(3,minmax(0,1fr))}.galleryitem img{height:160px}}
+@media(max-width:600px){
+.hero{padding:34px 0 40px}.hero-grid{gap:26px}.hero h1{font-size:clamp(2.25rem,10vw,2.9rem)}.hero-photo{width:min(72%,260px);max-width:260px}.hero-photo img{height:330px;max-height:none;border-radius:140px 140px 14px 14px}.photo-note{font-size:.76rem;margin-top:10px}.photo-note b{font-size:.85rem}
+section{padding:48px 0}.section-head{margin-bottom:22px}.statbox{padding:18px;gap:12px;border-radius:12px}.stat strong{font-size:1.45rem}.stat small{font-size:.72rem}
+.exp{grid-template-columns:1fr;gap:12px;padding:14px}.exp img{width:100%;height:auto;aspect-ratio:16/9;max-height:175px;object-fit:cover;border-radius:9px}.exp p,.exp ul{font-size:.88rem}
+.project img{max-height:240px}.projectbody{padding:16px}
+.leadgrid img{height:auto;aspect-ratio:4/3;max-height:250px}.leadgrid{gap:16px}
+.skillgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.skill{padding:15px}.skill p{font-size:.8rem}
+.gallerygrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.galleryitem img{height:132px;aspect-ratio:4/3;object-fit:cover}.galleryitem span{font-size:.76rem;padding:7px 1px 2px}
+.contactbox{padding:20px}.footerin{font-size:.75rem}
+}
+@media(max-width:380px){.galleryitem img{height:115px}.skillgrid{grid-template-columns:1fr}.statbox{grid-template-columns:1fr 1fr}}
+
 </style></head>
 <body>
 <nav class="nav"><div class="wrap navin"><a class="brand" href="#home">ANNISA <span>SAJDAH</span></a><button class="menu" aria-label="Buka menu" onclick="document.querySelector('.navlinks').classList.toggle('show')">☰</button><div class="navlinks"><a href="#about">Tentang</a><a href="#journey">Pengalaman</a><a href="#projects">Proyek</a><a href="#leadership">Organisasi</a><a href="#gallery">Galeri</a><a href="#contact">Kontak</a></div></div></nav>
-<header class="hero" id="home"><div class="wrap hero-grid"><div class="reveal"><div class="eyebrow">Portofolio pribadi · 2026</div><h1>Belajar.<br>Berkembang.<br><em>Berkontribusi.</em></h1><p class="lead">Lulusan Ilmu Keperawatan dengan pengalaman di layanan kesehatan, retail, administrasi, dan kerja tim. Terbuka untuk terus belajar dan berkembang.</p><div class="chips"><span class="chip">Administrasi</span><span class="chip">Operasional</span><span class="chip">Pelayanan</span><span class="chip">Kesehatan</span></div><div class="buttons"><a class="btn primary" href="#journey">Lihat perjalanan ↗</a><a class="btn ghost" href="#contact">Hubungi saya</a></div></div><div class="hero-photo reveal"><img src="assets/graduation-cumlaude.jpg" alt="Graduation portrait"><div class="circle-tag">Lulusan<br>Cumlaude</div><div class="photo-note"><b>Annisa Sajdah</b>Sarjana Keperawatan · UNISSULA</div></div></div></header>
-<section class="about" id="about"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">01 / Tentang saya</div><h2>Lebih dari sekadar gelar.</h2></div><p>Pembelajar yang memiliki dasar ilmu kesehatan serta pengalaman langsung di bidang pelayanan dan operasional.</p></div><div class="about-grid"><div class="statbox reveal"><div class="stat"><strong>3.55</strong><small>GPA</small></div><div class="stat"><strong>3.5 yrs</strong><small>Masa studi</small></div><div class="stat"><strong>2026</strong><small>Tahun lulus</small></div><div class="stat"><strong>4+</strong><small>Proposal PKM</small></div></div><div class="about-copy reveal"><p class="quote">Saya menghargai komunikasi yang baik, kerja sama yang dapat diandalkan, dan kemauan untuk belajar dari setiap pengalaman.</p><p>Lulusan S1 Ilmu Keperawatan Universitas Islam Sultan Agung dengan predikat Cumlaude. Pengalaman di layanan homecare dan retail mengembangkan kemampuan komunikasi, adaptasi, orientasi pelayanan, serta ketelitian yang dapat diterapkan dalam lingkungan administrasi dan operasional.</p></div></div></div></section>
+<header class="hero" id="home"><div class="wrap hero-grid"><div class="reveal"><div class="eyebrow">Portofolio pribadi · 2026</div><h1>Belajar.<br>Berkembang.<br><em>Berkontribusi.</em></h1><p class="lead">Lulusan Ilmu Keperawatan dengan pengalaman di layanan kesehatan, retail, administrasi, dan kerja tim. Terbuka untuk terus belajar dan berkembang.</p><div class="chips"><span class="chip">Administrasi</span><span class="chip">Operasional</span><span class="chip">Pelayanan</span><span class="chip">Kesehatan</span></div><div class="buttons"><a class="btn primary" href="#journey">Lihat perjalanan ↗</a><a class="btn ghost" href="#contact">Hubungi saya</a></div></div><div class="hero-photo reveal"><img src="assets/graduation-cumlaude.jpg" alt="Graduation portrait"><div class="photo-note"><b>Sarjana Keperawatan · Cumlaude</b>Universitas Islam Sultan Agung · 2026</div></div></div></header>
+<section class="about" id="about"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">01 / Tentang saya</div><h2>Lebih dari sekadar gelar.</h2></div><p>Pembelajar yang memiliki dasar ilmu kesehatan serta pengalaman langsung di bidang pelayanan dan operasional.</p></div><div class="about-grid"><div class="statbox reveal"><div class="stat"><strong>3.55</strong><small>IPK</small></div><div class="stat"><strong>3,5 tahun</strong><small>Masa studi</small></div><div class="stat"><strong>2026</strong><small>Tahun lulus</small></div><div class="stat"><strong>4+</strong><small>Proposal PKM</small></div></div><div class="about-copy reveal"><p class="quote">Saya menghargai komunikasi yang baik, kerja sama yang dapat diandalkan, dan kemauan untuk belajar dari setiap pengalaman.</p><p>Lulusan S1 Ilmu Keperawatan Universitas Islam Sultan Agung dengan predikat Cumlaude. Pengalaman di layanan homecare dan retail mengembangkan kemampuan komunikasi, adaptasi, orientasi pelayanan, serta ketelitian yang dapat diterapkan dalam lingkungan administrasi dan operasional.</p></div></div></div></section>
 <section class="journey" id="journey"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">02 / Pengalaman</div><h2>Perjalanan pengalaman saya</h2></div><p>Beragam lingkungan kerja memberikan pembelajaran tentang pelayanan, tanggung jawab, kolaborasi, dan ketelitian.</p></div><div class="timeline">
 <article class="exp reveal"><img src="assets/eiger.jpg" alt="Retail Assistant at Eiger"><div><div class="date">25 Mar — 9 Aug 2026</div><h3>Eigerindo · Retail Assistant</h3><div class="role">Pelayanan retail & operasional toko</div><p>Mendukung operasional toko dan pelayanan pelanggan, membantu memilih produk yang sesuai, serta menjaga standar toko.</p><ul><li>Melayani pelanggan, memberi rekomendasi produk, dan menangani keluhan</li><li>Operasional toko, dukungan stok, dan penataan produk</li><li>Kerja sama tim dan menjalankan SOP</li></ul></div></article>
 <article class="exp reveal"><img src="assets/multazam-privacy.jpg" alt="Homecare visit, patient identity blurred for privacy"><div><div class="date">15 May — 15 Aug 2026</div><h3>Klinik Pratama Multazam · Homecare Nurse</h3><div class="role">Layanan homecare freelance</div><p>Melakukan kunjungan rumah kepada pasien pasca rawat inap sebelum jadwal kontrol, memantau kondisi pasien, serta berkomunikasi dengan pasien dan keluarga.</p><ul><li>Pemeriksaan tanda-tanda vital dan observasi kondisi pasien</li><li>Konfirmasi jadwal kunjungan dan koordinasi</li><li>Pelaporan kunjungan dan komunikasi dengan pasien/keluarga</li></ul></div></article>
